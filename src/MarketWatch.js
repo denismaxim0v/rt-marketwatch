@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
 
+const icons = {
+  bitcoin: `coin fab fa-bitcoin`,
+  ethereum: `coin fab fa-ethereum`,
+  litecoin: `coin fas fa-dollar-sign`,
+  monero: `coin fas fa-dollar-sign`,
+  cardano: `coin fas fa-dollar-sign`
+}
+
 const MarketWatch = props => {
   let { socket } = props;
   const [state, setState] = useState({});
@@ -18,7 +26,7 @@ const MarketWatch = props => {
       <div className="marketGrid">
         {Object.keys(state).map(el => (
           <div className="gridItem">
-            <i className="fab fa-bitcoin"></i>
+            <i className={icons[el]}></i>
             <h2>{el}</h2>
             <span
               style={{
@@ -27,9 +35,9 @@ const MarketWatch = props => {
             >
               {state[el]}
               {state[el] > oldState[el] ? (
-                <i class="fas fa-arrow-up"></i>
+                <i className="fas fa-arrow-up"></i>
               ) : (
-                <i class="fas fa-arrow-down"></i>
+                <i className="fas fa-arrow-down"></i>
               )}
             </span>
           </div>

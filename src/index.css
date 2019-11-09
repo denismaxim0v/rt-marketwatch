@@ -54,10 +54,11 @@ code {
   color: #fecea8;
   font-size: 0.9em;
 }
-.gridItem span{
-  font-size: 2em;
-}
-.fab{
+.fab, .coin{
   color: #fecea8;
   font-size: 3em;
 }
+.gridItem span{
+  font-size: 2em;
+}
+
